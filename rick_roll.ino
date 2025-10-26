@@ -21,3 +21,19 @@
 #define  f5     698     // 698 Hz 
 #define  f5s    740     // 740 Hz
 #define  a5f    831     // 831 Hz 
+
+#define  rest    -1
+
+int piezo = 13; // Connect your piezo buzzer to this pin or change  it to match your circuit!
+int led = LED_BUILTIN; 
+
+volatile int beatlength  = 100; // determines tempo
+float beatseparationconstant = 0.3;
+
+int threshold;
+
+int  a; // part index
+int b; // song index
+int c; // lyric index
+
+boolean  flag;
