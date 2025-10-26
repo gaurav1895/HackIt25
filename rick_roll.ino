@@ -37,3 +37,52 @@ int b; // song index
 int c; // lyric index
 
 boolean  flag;
+
+// Parts 1 and 2 (Intro)
+
+int song1_intro_melody[] =
+{c5s,  e5f, e5f, f5, a5f, f5s, f5, e5f, c5s, e5f, rest, a4f, a4f};
+
+int song1_intro_rhythmn[]  =
+{6, 10, 6, 6, 1, 1, 1, 1, 6, 10, 4, 2, 10};
+
+// Parts 3 or 5 (Verse 1)
+
+int  song1_verse1_melody[] =
+{ rest, c4s, c4s, c4s, c4s, e4f, rest, c4, b3f, a3f,
+  rest, b3f, b3f, c4, c4s, a3f, a4f, a4f, e4f,
+  rest, b3f, b3f, c4, c4s, b3f,  c4s, e4f, rest, c4, b3f, b3f, a3f,
+  rest, b3f, b3f, c4, c4s, a3f, a3f, e4f,  e4f, e4f, f4, e4f,
+  c4s, e4f, f4, c4s, e4f, e4f, e4f, f4, e4f, a3f,
+  rest,  b3f, c4, c4s, a3f, rest, e4f, f4, e4f
+};
+
+int song1_verse1_rhythmn[] =
+{  2, 1, 1, 1, 1, 2, 1, 1, 1, 5,
+  1, 1, 1, 1, 3, 1, 2, 1, 5,
+  1, 1, 1, 1, 1,  1, 1, 2, 1, 1, 1, 1, 3,
+  1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 4,
+  5, 1, 1, 1,  1, 1, 1, 1, 2, 2,
+  2, 1, 1, 1, 3, 1, 1, 1, 3
+};
+
+const char* lyrics_verse1[]  =
+{ "We're ", "no ", "strangers ", "", "to ", "love ", "", "\
+\
+",
+  "You ", "know ", "the ", "rules ", "and ", "so ", "do ", "I\
+\
+",
+  "A ", "full ", "commitment's ", "", "", "what ", "I'm ", "thinking  ", "", "of", "\
+\
+",
+  "You ", "wouldn't ", "", "get ", "this  ", "from ", "any ", "", "other ", "", "guy\
+\
+",
+  "I ", "just  ", "wanna ", "", "tell ", "you ", "how ", "I'm ", "feeling", "\
+\
+",
+  "Gotta ", "", "make ", "you ", "understand", "", "\
+\
+"
+};
