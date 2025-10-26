@@ -154,3 +154,53 @@ void loop()
     play();
   }
 }
+
+void  play() {
+  int notelength;
+  if (a == 1 || a == 2) {
+    // intro
+    notelength  = beatlength * song1_intro_rhythmn[b];
+    if (song1_intro_melody[b] > 0) {
+      digitalWrite(led, HIGH);
+      tone(piezo, song1_intro_melody[b], notelength);
+    }
+    b++;
+    if (b >= sizeof(song1_intro_melody) / sizeof(int)) {
+      a++;
+      b = 0;
+      c = 0;
+    }
+  }
+  else if (a == 3  || a == 5) {
+    // verse
+    notelength = beatlength * 2 * song1_verse1_rhythmn[b];
+    if (song1_verse1_melody[b] > 0) {
+      digitalWrite(led, HIGH);
+      Serial.print(lyrics_verse1[c]);
+      tone(piezo, song1_verse1_melody[b], notelength);
+      c++;
+    }
+    b++;
+    if (b >= sizeof(song1_verse1_melody) / sizeof(int)) {
+      a++;
+      b = 0;
+      c = 0;
+    }
+  }
+  else if (a == 4 || a == 6) {
+    // chorus
+    notelength = beatlength * song1_chorus_rhythmn[b];
+    if  (song1_chorus_melody[b] > 0) {
+      digitalWrite(led, HIGH);
+      Serial.print(lyrics_chorus[c]);
+      tone(piezo, song1_chorus_melody[b], notelength);
+      c++;
+    }
+    b++;
+    if (b >= sizeof(song1_chorus_melody) / sizeof(int)) {
+      Serial.println("");
+      a++;
+      b = 0;
+      c = 0;
+    }
+  }
