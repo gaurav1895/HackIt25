@@ -204,3 +204,11 @@ void  play() {
       c = 0;
     }
   }
+  delay(notelength);
+  noTone(piezo);
+  digitalWrite(led, LOW);
+  delay(notelength * beatseparationconstant);
+  if (a == 7) { // loop back around to beginning of song
+    a = 1;
+  }
+}
