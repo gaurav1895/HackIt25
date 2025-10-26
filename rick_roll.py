@@ -28,3 +28,22 @@ def play_tone(frequency, duration, volume=0.4):
     # Convert to 16-bit PCM
     audio = np.int16(wave * 32767)
     sa.play_buffer(audio, 1, 2, fs).wait_done()
+
+# "Never Gonna Give You Up" short melody
+melody = [
+    ('D5', 0.4), ('E5', 0.4), ('CS5', 0.4), ('B4', 0.6),
+    ('B4', 0.2), ('E5', 0.4), ('E5', 0.4), ('FS5', 0.4), ('D5', 0.6),
+    ('B4', 0.4), ('CS5', 0.4), ('A4', 0.8),
+
+    (0, 0.3),  # rest
+
+    ('D5', 0.4), ('E5', 0.4), ('CS5', 0.4), ('B4', 0.6),
+    ('B4', 0.2), ('E5', 0.4), ('E5', 0.4), ('FS5', 0.4), ('D5', 0.6),
+    ('A4', 0.8)
+]
+
+# Play the melody
+for note, duration in melody:
+    freq = notes.get(note, 0)
+    play_tone(freq, duration)
+    time.sleep(0.05)
