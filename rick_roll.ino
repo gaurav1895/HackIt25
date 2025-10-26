@@ -110,3 +110,47 @@ int song1_chorus_rhythmn[]  =
   1, 1, 1, 1,
   3, 3, 3, 1, 2, 2, 2, 4, 8, 4
 };
+
+const char*  lyrics_chorus[] =
+{ "Never ", "", "gonna ", "", "give ", "you ",  "up\
+\
+",
+  "Never ", "", "gonna ", "", "let ", "you ", "down",  "", "\
+\
+",
+  "Never ", "", "gonna ", "", "run ", "around ",  "", "", "", "and ", "desert ", "", "you\
+\
+",
+  "Never ", "",  "gonna ", "", "make ", "you ", "cry\
+\
+",
+  "Never ", "", "gonna  ", "", "say ", "goodbye ", "", "", "\
+\
+",
+  "Never ", "",  "gonna ", "", "tell ", "a ", "lie ", "", "", "and ", "hurt ",  "you\
+\
+"
+};
+
+void setup()
+{
+  pinMode(piezo, OUTPUT);
+  pinMode(led,  OUTPUT);
+
+  digitalWrite(led, LOW);
+  Serial.begin(9600);
+  flag = true;
+  a = 4;
+  b = 0;
+  c = 0;
+}
+
+void loop()
+{
+
+
+  // play  next step in song
+  if (flag == true) {
+    play();
+  }
+}
